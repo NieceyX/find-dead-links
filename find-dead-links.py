@@ -10,7 +10,7 @@ def crawl(url, levels):
 		if r.status_code not in [200, 302]:
 			print(url)
 		elif r.status_code in [200, 302]:
-			if levels > 0:
+			if levels >= 0:
 				soup = BeautifulSoup(r.text, features='html.parser')
 				results = soup.find_all('a', href=True)
 				for result in results:
